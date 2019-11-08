@@ -104,7 +104,7 @@ func (c *ledCollector) Collect(ch chan<- prometheus.Metric) {
 }
 
 func name(s string) string {
-	return strings.Replace(s, ":", "_", -1)
+	return strings.Replace(strings.Replace(s, ":", "_", -1), "-", "_", -1)
 }
 
 func main() {
